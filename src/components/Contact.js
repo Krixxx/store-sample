@@ -22,6 +22,25 @@ const Contact = () => {
               subscribe
             </button>
           </form>
+
+          {/* FORMSPREE SAMPLE */}
+          {/* 
+          <form
+            action='https://formspree.io/f/xzbkazyi'
+            method='POST'
+            className='contact-form'
+          >
+            <input
+              type='email'
+              className='form-input'
+              placeholder='enter e-mail'
+              name='_replyto'
+            />
+            <button type='submit' className='submit-btn'>
+              subscribe
+            </button>
+          </form>
+          */}
         </div>
       </div>
     </Wrapper>
