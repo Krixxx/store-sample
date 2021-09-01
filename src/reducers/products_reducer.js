@@ -36,7 +36,7 @@ const products_reducer = (state, action) => {
     return { ...state, products_loading: false, products_error: true };
   }
   // SINGLE PRODUCT reducers
-  if (action.tye === GET_SINGLE_PRODUCT_BEGIN) {
+  if (action.type === GET_SINGLE_PRODUCT_BEGIN) {
     return {
       ...state,
       single_product_loading: true,

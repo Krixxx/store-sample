@@ -73,12 +73,12 @@ const SingleProductPage = () => {
           back to products
         </Link>
         <div className='product-center'>
-          <ProductImages />
+          <ProductImages images={images} />
           <section className='content'>
             <h2>{name}</h2>
             <Stars />
             <h5>{formatPrice(price)}</h5>
-            <p className='desription'>{description}</p>
+            <p className='desc'>{description}</p>
             <p className='info'>
               <span>Available :</span>
               {stock > 0 ? 'In stock' : 'out of stock'}
