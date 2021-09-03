@@ -15,7 +15,12 @@ import { useProductsContext } from './products_context';
 const initialState = {
   filtered_products: [],
   all_products: [],
+
+  // this value controls, which view we see in products page
   grid_view: true,
+
+  // these values are for sorting (price, a-z)
+  sort: 'price-lowest', //this value must match with one of the selector values!!!!!
 };
 
 const FilterContext = React.createContext();
@@ -35,8 +40,18 @@ export const FilterProvider = ({ children }) => {
     dispatch({ type: SET_LISTVIEW });
   };
 
+  const updateSort = (e) => {
+    // we NEED name value when we use filtering
+    const name = e.target.name;
+    const value = e.target.value;
+
+    dispatch({ type: UPDATE_SORT, payload: value });
+  };
+
   return (
-    <FilterContext.Provider value={{ ...state, setGridView, setListView }}>
+    <FilterContext.Provider
+      value={{ ...state, setGridView, setListView, updateSort }}
+    >
       {children}
     </FilterContext.Provider>
   );
