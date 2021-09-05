@@ -6,4 +6,15 @@ export const formatPrice = (number) => {
   }).format(number / 100);
 };
 
-export const getUniqueValues = () => {};
+// this function helps us to retrieve unique values for each data type. We use it to get unique values for categories, companies and colors.
+export const getUniqueValues = (data, type) => {
+  let unique = data.map((item) => item[type]);
+
+  // it type is colors, then we need to flatten the received data into array.
+  if (type === 'colors') {
+    unique = unique.flat();
+  }
+
+  // we add "all" to the first item and then the rest of the items
+  return ['all', ...new Set(unique)];
+};
