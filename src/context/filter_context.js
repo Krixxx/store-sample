@@ -75,6 +75,10 @@ export const FilterProvider = ({ children }) => {
       value = e.target.textContent; //since we cannot get target value from a button, we need to get the text content of a button.
     }
 
+    if (name === 'color') {
+      value = e.target.dataset.color; // this time we use dataset to identify, which button was pressed
+    }
+
     dispatch({ type: UPDATE_FILTERS, payload: { name, value } });
   };
 
