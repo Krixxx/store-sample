@@ -71,6 +71,10 @@ export const FilterProvider = ({ children }) => {
     let name = e.target.name;
     let value = e.target.value;
 
+    if (name === 'category') {
+      value = e.target.textContent; //since we cannot get target value from a button, we need to get the text content of a button.
+    }
+
     dispatch({ type: UPDATE_FILTERS, payload: { name, value } });
   };
 
