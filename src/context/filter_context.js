@@ -79,6 +79,10 @@ export const FilterProvider = ({ children }) => {
       value = e.target.dataset.color; // this time we use dataset to identify, which button was pressed
     }
 
+    if (name === 'price') {
+      value = Number(value); //since input range turns number to string, we must make it back to number.
+    }
+
     dispatch({ type: UPDATE_FILTERS, payload: { name, value } });
   };
 
