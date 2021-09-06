@@ -8,7 +8,7 @@ import {
   FILTER_PRODUCTS,
   CLEAR_FILTERS,
 } from '../actions';
-import { products_url } from '../utils/constants';
+// import { products_url } from '../utils/constants';
 
 const filter_reducer = (state, action) => {
   if (action.type === LOAD_PRODUCTS) {

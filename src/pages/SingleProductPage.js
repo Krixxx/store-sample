@@ -30,6 +30,7 @@ const SingleProductPage = () => {
 
   useEffect(() => {
     fetchSingleProduct(`${url}${id}`);
+    // eslint-disable-next-line
   }, [id]);
 
   // if we get an error, we can navigate back to homepage after showing error in 3 seconds.
@@ -43,6 +44,7 @@ const SingleProductPage = () => {
         history.push('/');
       }, 3000);
     }
+    // eslint-disable-next-line
   }, [error]);
 
   if (loading) {

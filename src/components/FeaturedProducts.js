@@ -32,6 +32,9 @@ const FeaturedProducts = () => {
         })}
         {/* first we get first three items from the list and then map over them */}
       </div>
+      <Link to='/products' className='btn'>
+        all products
+      </Link>
     </Wrapper>
   );
 };
