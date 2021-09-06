@@ -51,8 +51,10 @@ export const CartProvider = ({ children }) => {
     dispatch({ type: CLEAR_CART });
   };
 
-  // localStorage
   useEffect(() => {
+    // count cart totals
+    dispatch({ type: COUNT_CART_TOTALS });
+    // localStorage
     localStorage.setItem('cart', JSON.stringify(state.cart));
   }, [state.cart]);
 
