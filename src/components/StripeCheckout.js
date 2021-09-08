@@ -30,12 +30,17 @@ const CheckoutForm = () => {
   const elements = useElements();
 
   const createPaymentIntent = async () => {
-    console.log('hello from stripe checkout');
-    // eslint-disable-next-line
+    try {
+      const data = await axios.post(
+        '/.netlify/functions/create-payment-intent',
+        JSON.stringify({ cart, shipping_fee, total_amount })
+      );
+    } catch (error) {}
   };
 
   useEffect(() => {
     createPaymentIntent();
+    // eslint-disable-next-line
   }, []);
 
   const handleChange = async (event) => {};
